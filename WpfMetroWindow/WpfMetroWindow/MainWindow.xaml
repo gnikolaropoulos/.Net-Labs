@@ -1,0 +1,100 @@
+﻿<Window
+	x:Class="WpfMetroWindow.MainWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="MainWindow"
+	Height="470"
+	Width="900"
+	IsTabStop="False"
+	AllowsTransparency="True"
+	Background="{x:Null}"
+	BorderBrush="#FF3F3F3F"
+	PreviewMouseMove="HandlePreviewMouseMove"
+	SnapsToDevicePixels="True"
+	TextOptions.TextFormattingMode="Display"
+	TextOptions.TextRenderingMode="ClearType"
+	ResizeMode="NoResize"
+	WindowStyle="None"
+	WindowStartupLocation="CenterOwner">
+	<Grid>
+		<Border
+			x:Name="m_edgeBorder"
+			x:FieldModifier="private"
+			Margin="10"
+			Background="White"
+			IsHitTestVisible="False"
+			IsEnabled="False">
+			<Border.Effect>
+				<DropShadowEffect
+					Opacity="0.999"
+					BlurRadius="16"
+					ShadowDepth="0" />
+			</Border.Effect>
+		</Border>
+		<Grid
+			x:Name="m_contentGrid"
+			x:FieldModifier="private"
+			Margin="13"
+			Background="White">
+			<Rectangle
+				Height="28"
+				VerticalAlignment="Top"
+				Fill="White"
+				PreviewMouseDown="HandleHeaderPreviewMouseDown" />
+			<Button
+				HorizontalAlignment="Right"
+				Margin="500,6,8,0"
+				VerticalAlignment="Top"
+				Style="{StaticResource ChromeButtonStyle}"
+				Click="HandleCloseClick">
+				<TextBlock
+					TextWrapping="Wrap"
+					Text="r"
+					FontFamily="Webdings"
+					Foreground="#FF919191"
+					FontSize="13.333" />
+			</Button>
+		</Grid>
+		<ContentControl
+			x:Name="ActiveItem"
+			Background="Transparent"
+			HorizontalAlignment="Stretch"
+			IsTabStop="False"
+			Focusable="False"
+			HorizontalContentAlignment="Center"
+			VerticalContentAlignment="Center"
+			VerticalAlignment="Bottom"
+			Margin="13,0,12,13"
+			MaxHeight="375" />
+		<Label
+			Foreground="Black"
+			Content="SAMPLE"
+			Margin="27,24,0,0"
+			FontSize="25"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top" />
+		<Label
+			Content="WINDOW"
+			FontSize="25"
+			Margin="126,24,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Foreground="Gray" />
+		<StackPanel
+			Style="{StaticResource LinksStackPanelStyle}"
+			Margin="31,0,0,389">
+			<Button
+				Style="{StaticResource LinkStyle}"
+				Content="MENU1" />
+			<Button
+				Style="{StaticResource LinkStyle}"
+				Content="MENU2" />
+			<Button
+				Style="{StaticResource LinkStyle}"
+				Content="MENU3" />
+			<Button
+				Style="{StaticResource LinkStyle}"
+				Content="MENU4" />
+		</StackPanel>
+	</Grid>
+</Window>
